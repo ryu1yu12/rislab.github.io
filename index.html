@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>山梨地域バスロケシステム</title>
+
+    <!-- Leaflet -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>山梨地域バス車番照会システム</h1>
+    </header>
+
+    <!-- 検索エリア -->
+    <div id="search-area">
+
+        <input
+            type="text"
+            id="searchBox"
+            placeholder="車番(C〇〇〇,F〇〇〇〇) または ナンバー">
+
+        <button id="searchButton">
+            検索
+        </button>
+
+        <button id="clearButton">
+            解除
+        </button>
+
+    </div>
+
+    <!-- 地図 -->
+    <div id="map"></div>
+    
+    
+
+    <!-- 車両情報パネル -->
+    <div id="infoPanel">
+
+        <h2>車両情報</h2>
+
+        <table>
+
+            <tr>
+                <th>車番</th>
+                <td id="infoFleetNo">-</td>
+            </tr>
+
+            <tr>
+                <th>ナンバー</th>
+                <td id="infoPlateNo">-</td>
+            </tr>
+
+            <tr>
+                <th>営業所</th>
+                <td id="infoOffice">-</td>
+            </tr>
+
+            <tr>
+                <th>会社</th>
+                <td id="infoCompany">-</td>
+            </tr>
+
+            <tr>
+                <th>車種</th>
+                <td id="infoCarType">-</td>
+            </tr>
+
+            <tr>
+                <th>型式</th>
+                <td id="infoModel">-</td>
+            </tr>
+
+            <tr>
+                <th>路線</th>
+                <td id="infoRoute">-</td>
+            </tr>
+
+            <tr>
+                <th>遅れ</th>
+                <td id="infoDelay">-</td>
+            </tr>
+
+        </table>
+
+        <hr>
+
+        <h3>現在運用</h3>
+
+        <div id="currentOperation">
+            -
+        </div>
+
+        <hr>
+
+        <h3>今日の運用履歴(±5分以内の誤差あり)</h3>
+
+        <div id="todayOperation">
+            取得中...
+        </div>
+
+        <hr>
+
+        <h3>次便予測</h3>
+
+        <div id="nextOperation">
+            -
+        </div>
+
+    </div>
+
+    <div id="unknownPanel">
+
+        <h3>未登録車両</h3>
+
+        <div id="unknownList"></div>
+
+    </div>
+
+    <div id="dayTypePanel">
+
+    <div id="dayTypePanel">
+
+    <h3>運行日区分</h3>
+
+    <div id="dayTypeCalendar"></div>
+
+    <div id="dayTypeMessage">
+        日付を選択してください
+    </div>
+
+    <div id="dayTypeButtons"></div>
+
+</div>
+
+</div>
+    <!-- ステータス -->
+    <footer>
+
+        <span id="busCount">
+            車両数：0台
+        </span>
+
+        <span id="updateTime">
+            更新：--
+        </span>
+
+    </footer>
+
+    <!-- Leaflet -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+    <!-- JavaScript -->
+    
+    <script src="js/map.js"></script>
+    <script src="js/vehicle.js"></script>
+    <script src="js/busstop.js"></script>
+    <script src="js/bus.js"></script>
+    <script src="js/trajectory.js"></script>
+    <script src="js/infoPanel.js"></script>
+    <script src="js/search.js"></script>
+    <script src="js/logger.js"></script>
+    <script src="js/daytype.js"></script>
+    <script src="js/operation.js"></script>
+    <script src="js/app.js"></script>
+
+</body>
+
+</html>
